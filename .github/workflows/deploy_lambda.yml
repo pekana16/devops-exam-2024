@@ -36,6 +36,7 @@ jobs:
 
       - name: Deploying SAM
         run: |
-          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name Images-Generator-Stack
+          cd sam_lambda/images_generator
+          sam deploy -t template.yaml --no-confirm-changeset --no-fail-on-empty-changeset --stack-name Images-Generator-Stack
 
 
