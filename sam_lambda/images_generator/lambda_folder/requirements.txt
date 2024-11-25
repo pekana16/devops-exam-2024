@@ -1,0 +1,2 @@
+# ensuring that "boto3" is include in Lambda deployment package
+boto3
