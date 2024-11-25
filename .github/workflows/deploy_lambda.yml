@@ -30,7 +30,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Building SAM
-        run: sam build
+        run: sam build -t sam_lambda/template.yaml
 
       - name: Deploying SAM
         run: |

@@ -1,6 +1,4 @@
 import base64
-import traceback
-
 import boto3
 import json
 import random
