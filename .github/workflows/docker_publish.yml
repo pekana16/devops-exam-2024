@@ -14,7 +14,7 @@ jobs:
       - name: Cloning repo
         uses: actions/checkout@v3
 
-      - name: Set up Docker Buildx
+      - name: Setting up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
       - name: Making sure the authentication works
