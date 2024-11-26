@@ -20,6 +20,14 @@
  - SQS URL: https://sqs.eu-west-1.amazonws.com/244530008913/Queue_39
 
 # Oppgave 4
+ - Dette er spørsmålet hvor jeg er litt usikker. Jeg tror at jeg klarte å gjøre det riktig – jeg mottok 
+     e-post på min e-mail.
+   Her er det du kan prøve:
+     - terraform init (hvis det ikke allerede er gjort)
+     - terraform plan -out=tfplan -var "email_notification=dinemail@gmail.com"
+     - terraform apply tfplan
+ - Bare erstatt dinemail@gmail.com med din egen e-postadresse, så tror jeg du vil motta det. 
+   Jeg satte ikke en default-verdi for e-post, så du kan prøve og se om det fungerer og om jeg gjorde det riktig.
 
 # Oppgave 5
 CI/CD og Automation CI/CD-prosesser har unike utfordringer for begge arkitekturene.
