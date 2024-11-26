@@ -1,10 +1,14 @@
 # Oppgave 1
   - Leveranse 1: https://41zkfw52qi.execute-api.eu-west-1.amazonaws.com/Prod/generate
 
-
   - Leveranse 2: https://github.com/pekana16/devops-exam-2024/actions/runs/12016768152
 
 # Oppagave 2
+  - Leveranse 1: https://github.com/pekana16/devops-exam-2024/actions/runs/12025656987
+
+  - Leveranse 2: https://github.com/pekana16/devops-exam-2024/actions/runs/12025822666
+
+  - Leveranse 3: https://sqs.eu-west-1.amazonaws.com/244530008913/generator_for_images_queue
 
 # Oppgave 3
  - Beskrivelse:
