@@ -28,8 +28,9 @@ jobs:
         run: terraform init
         working-directory: infra
 
-      - name: Terraform Plan
+      - name: Terraform Plan (non-main branch - second-branch)
         id: plan
+        if: github.ref != 'refs/heads/main' # making sure it only works for non-main branch
         run: terraform plan -out=tfplan
         working-directory: infra
 
