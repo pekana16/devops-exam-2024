@@ -5,39 +5,39 @@ on:
     branches:
       - '**'  # Triggers on all branches
 
-jobs:
-  terraform:
-    name: Terraform Plan or Apply
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Cloning repo
-        uses: actions/checkout@v3
-
-      - name: Setting up Terraform
-        uses: hashicorp/setup-terraform@v2
-
-      - name: Configuring all the AWS credentials
-        uses: aws-actions/configure-aws-credentials@v3
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: 'eu-west-1'
-
-      - name: Terraform Init
-        run: terraform init
-
-      - name: Terraform Plan
-        id: plan
-        run: terraform plan -out=tfplan
-
-      - name: Terraform Apply (main branch)
-        if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve tfplan
-
-      - name: Finally uploading Terraform plan (non-main branches)
-        if: github.ref != 'refs/heads/main'
-        uses: actions/upload-artifact@v3
-        with:
-          name: tfplan
-          path: tfplan
+#jobs:
+#  terraform:
+#    name: Terraform Plan or Apply
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Cloning repo
+#        uses: actions/checkout@v3
+#
+#      - name: Setting up Terraform
+#        uses: hashicorp/setup-terraform@v2
+#
+#      - name: Configuring all the AWS credentials
+#        uses: aws-actions/configure-aws-credentials@v3
+#        with:
+#          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#          aws-region: 'eu-west-1'
+#
+#      - name: Terraform Init
+#        run: terraform init
+#
+#      - name: Terraform Plan
+#        id: plan
+#        run: terraform plan -out=tfplan
+#
+#      - name: Terraform Apply (main branch)
+#        if: github.ref == 'refs/heads/main'
+#        run: terraform apply -auto-approve tfplan
+#
+#      - name: Finally uploading Terraform plan (non-main branches)
+#        if: github.ref != 'refs/heads/main'
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: tfplan
+#          path: tfplan
